@@ -1,6 +1,6 @@
 # Ex.No: 10  Logic Programming –  Simple queries from facts and rules
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 13-09-2025                                                                         
+### REGISTER NUMBER : 212223040216
 ### AIM: 
 To write a prolog program to find the answer of query. 
 ###  Algorithm:
@@ -21,9 +21,19 @@ Construct the FOL representation for the following sentences <br>
 5.	 Bill eats peanuts  <br> 
    Convert into clause form and Prove that John like Apple by using Prolog. <br> 
 ### Program:
+```
+likes(john,X):-food(X). 
+food(apple).
+food(chicken).
+eats(sue,X):-eats(bill,X).
+eats(bill,peanuts). 
+```
 
 
 ### Output:
+
+<img width="937" height="169" alt="Screenshot 2025-09-06 141307" src="https://github.com/user-attachments/assets/8cd36167-d163-4a69-9177-3bb041625119" />
+
 
 ### Task 2:
 Consider the following facts and represent them in predicate form: <br>              
@@ -34,9 +44,15 @@ Consider the following facts and represent them in predicate form: <br>
 Convert the facts in predicate form to clauses and then prove by resolution: “Steve likes BK301 course”<br> 
 
 ### Program:
-
-
+```
+likes(steve,X):-easycourse(X).
+hard(science).
+easycourse(X):-dept(basketweaving,X). 
+dept(basketweaving, bk301).
+``` 
 ### Output:
+
+<img width="936" height="162" alt="Screenshot 2025-09-06 141337" src="https://github.com/user-attachments/assets/7235eeea-a87e-4042-9bf1-3e48d343f6aa" />
 
 ### Task 3:
 Consider the statement <br> 
@@ -44,8 +60,28 @@ Consider the statement <br>
 Convert to Clause form and prove west is criminal by using Prolog.<br> 
 ### Program:
 
+```
+crime(X):-
+    	  american(X),
+    	  weapon(Y),
+    	  hostile(X,Z),
+          sells(X,Y,Z).
+sells(west,Y,nano):-
+    owns(nano,Y),
+    missile(Y). 
+weapon(Y):-
+    missile(A).
+hostile(B,A):-
+    enemy(A,B).
+enemy(nano,west).
+owns(nano,m1).
+missile(m1).
+american(west).
 
+```
 ### Output:
+
+<img width="948" height="182" alt="Screenshot 2025-09-06 143644" src="https://github.com/user-attachments/assets/7678b982-3034-467d-b6af-3b658c6abb43" />
 
 ### Result:
 Thus the prolog programs were executed successfully and the answer of query was found.
